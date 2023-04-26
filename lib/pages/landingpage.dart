@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:webpage/widgets/Elevatedbutton.dart';
+import 'package:webpage/widgets/textbuttonicon.dart';
+import 'package:webpage/widgets/textformfield.dart';
 
 class LandPage extends StatefulWidget {
   const LandPage({Key? key}) : super(key: key);
@@ -40,6 +43,7 @@ class _LandPageState extends State<LandPage> {
                           padding: const EdgeInsets.all(12.0),
                           child: Column(
                             children: [
+                              SizedBox(height: 40),
                               Text(
                                 "Sign In",
                                 style: TextStyle(
@@ -48,42 +52,32 @@ class _LandPageState extends State<LandPage> {
                                     color: Color(0xFFFEEFE3),
                                     fontFamily: "GR"),
                               ),
+                              SizedBox(height: 40),
+                              TBI(
+                                  text: "Sign In With Google",
+                                  icon: Icons.g_translate),
+                              SizedBox(height: 30),
+                              TBI(
+                                  text: "Sign In With Apple",
+                                  icon: Icons.apple),
+                              SizedBox(height: 30),
+                              TFF(Ltext: "Email", FF: "TR", icon: Icons.mail),
                               SizedBox(height: 20),
-                              TextFormField(
-                                  decoration: InputDecoration(
-                                focusedBorder: OutlineInputBorder(
-                                    borderSide:
-                                        BorderSide(color: Colors.white)),
-                                enabledBorder: OutlineInputBorder(
-                                    borderSide:
-                                        BorderSide(color: Color(0xFFFEEFE3))),
-                                prefixIcon: Icon(
-                                  Icons.verified,
-                                  color: Color(0xFFFEEFE3),
-                                ),
-                                labelText: "Email",
-                                labelStyle: TextStyle(
-                                    color: Color(0xFFFEEFE3), fontFamily: "TR"),
-                              )),
-                              SizedBox(height: 20),
-                              TextFormField(
-                                  obscureText: true,
-                                  decoration: InputDecoration(
-                                      focusedBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                              color: Color(0xFFFEEFE3))),
-                                      enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                              color: Color(0xFFFEEFE3))),
-                                      prefixIcon: Icon(
-                                        Icons.verified,
-                                        color: Color(0xFFFEEFE3),
-                                      ),
-                                      labelText: "Password",
-                                      labelStyle: TextStyle(
-                                          color: Color(0xFFFEEFE3),
-                                          fontFamily: "TR"),
-                                      border: const OutlineInputBorder())),
+                              TFF(
+                                  Ltext: "Password",
+                                  FF: "TR",
+                                  icon: Icons.lock),
+                              SizedBox(height: 30),
+                              EVB(text: "Login"),
+                              SizedBox(height: 30),
+                              EVB(text: "Why You Forget Password??"),
+                              SizedBox(height: 50),
+                              Text(
+                                "You No Get Account?? Oya Go Back Then Sign Up Jon",
+                                style: TextStyle(
+                                    fontFamily: "TR", color: Color(0xFFFEEFE3)),
+                                textAlign: TextAlign.left,
+                              )
                             ],
                           ),
                         ),
@@ -116,64 +110,41 @@ class _LandPageState extends State<LandPage> {
                         padding: const EdgeInsets.all(12.0),
                         child: Column(
                           children: [
+                            SizedBox(height: 40),
                             Text(
-                              "Sign Up",
+                              "       The Only Way Is Bet                                                 ",
                               style: TextStyle(
                                   fontSize: 28,
                                   fontWeight: FontWeight.bold,
                                   color: Color(0xFFFEEFE3),
                                   fontFamily: "GR"),
                             ),
-                            SizedBox(height: 20),
-                            TextFormField(
-                                decoration: InputDecoration(
-                                    contentPadding: EdgeInsets.symmetric(horizontal: 10),
-                                    focusedBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                            color: Color(0xFFFEEFE3))),
-                                    enabledBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                            color: Color(0xFFFEEFE3))),
-                                    prefixIcon: Icon(
-                                      Icons.verified,
-                                      color: Color(0xFFFEEFE3),
-                                    ),
-                                    labelText: "Email",
-                                    labelStyle: TextStyle(
-                                        color: Color(0xFFFEEFE3),
-                                        fontFamily: "TR"),
-                                    border: const OutlineInputBorder())),
-                            SizedBox(height: 20),
-                            TextFormField(
-                                obscureText: true,
-                                decoration: InputDecoration(
-                                    focusedBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                            color: Color(0xFFFEEFE3))),
-                                    enabledBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                            color: Color(0xFFFEEFE3))),
-                                    prefixIcon: Icon(
-                                      Icons.verified,
-                                      color: Color(0xFFFEEFE3),
-                                    ),
-                                    labelText: "Password",
-                                    labelStyle: TextStyle(
-                                        color: Color(0xFFFEEFE3),
-                                        fontFamily: "TR"),
-                                    border: const OutlineInputBorder())),
-                            ElevatedButton(
-                              onPressed: () {
-                                // Do something when the button is pressed
-                              },
-                              style: ElevatedButton.styleFrom(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                minimumSize: Size(300, 50),
+                            Center(
+                              child: Text(
+                                "Join Us",
+                                style: TextStyle(
+                                    fontSize: 28,
+                                    fontWeight: FontWeight.bold,
+                                    color: Color(0xFFFEEFE3),
+                                    fontFamily: "GR"),
                               ),
-                              child: Text('Sign up with Google'),
-                            )
+                            ),
+                            // Text(
+                            //   "                 Join Us                                                 ",
+                            //   style: TextStyle(
+                            //       fontSize: 28,
+                            //       fontWeight: FontWeight.bold,
+                            //       color: Color(0xFFFEEFE3),
+                            //       fontFamily: "GR"),
+                            // ),
+                            SizedBox(height: 70),
+                            TBI(
+                                text: "Sign In With Google",
+                                icon: Icons.g_translate),
+                            SizedBox(height: 30),
+                            TBI(text: "Sign In With Apple", icon: Icons.apple),
+                            SizedBox(height: 120),
+                            EVB(text: "Create Account"),
                           ],
                         ),
                       ),
