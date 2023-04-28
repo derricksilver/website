@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 
 class EVB extends StatelessWidget {
   String text;
-
-  EVB({Key? key, required this.text}) : super(key: key);
+  final VoidCallback onPress;
+  EVB({Key? key, required this.text, required this.onPress}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-        onPressed: () {},
+        onPressed: onPress,
         style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30),

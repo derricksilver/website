@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:webpage/pages/homepage/HPBUTTONS.dart';
+import 'package:webpage/pages/homepage/home.dart';
 import 'package:webpage/widgets/Elevatedbutton.dart';
 import 'package:webpage/widgets/textbuttonicon.dart';
 import 'package:webpage/widgets/textformfield.dart';
@@ -68,9 +70,20 @@ class _LandPageState extends State<LandPage> {
                                   FF: "TR",
                                   icon: Icons.lock),
                               SizedBox(height: 30),
-                              EVB(text: "Login"),
+                              EVB(
+                                text: "Login",
+                                onPress: () {
+                                  Navigator.push(context,
+                                      MaterialPageRoute(builder: (context) {
+                                    return Home();
+                                  }));
+                                },
+                              ),
                               SizedBox(height: 30),
-                              EVB(text: "Why You Forget Password??"),
+                              EVB(
+                                text: "Why You Forget Password??",
+                                onPress: () {},
+                              ),
                               SizedBox(height: 50),
                               Text(
                                 "You No Get Account?? Oya Go Back Then Sign Up Jon",
@@ -144,7 +157,15 @@ class _LandPageState extends State<LandPage> {
                             SizedBox(height: 30),
                             TBI(text: "Sign In With Apple", icon: Icons.apple),
                             SizedBox(height: 120),
-                            EVB(text: "Create Account"),
+                            EVB(
+                              text: "Create Account",
+                              onPress: () {
+                                Navigator.push(context,
+                                    MaterialPageRoute(builder: (context) {
+                                      return HBP();
+                                    }));
+                              },
+                            ),
                           ],
                         ),
                       ),

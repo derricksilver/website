@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class TFF extends StatelessWidget {
-  String Ltext, FF;
-  IconData icon;
+ late String Ltext, FF;
+  late IconData icon;
 
   TFF({Key? key, required this.Ltext, required this.FF, required this.icon})
       : super(key: key);
