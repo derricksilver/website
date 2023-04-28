@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:webpage/widgets/Elevatedbutton.dart';
-import 'package:webpage/widgets/textbuttonicon.dart';
-import 'package:webpage/widgets/textformfield.dart';
+/*import 'package:webpage/pages/homepage/HPBUTTONS.dart';
+import 'package:webpage/pages/homepage/hhmmm.dart';
+import 'package:webpage/pages/homepage/home.dart';
+import 'package:webpage/pages/landingpagetypes/large_screen.dart';
+import 'package:webpage/pages/modulepage.dart';
+import 'package:webpage/widgets/landingwidgets/textbutton.dart';*/
 
 class LandPage extends StatefulWidget {
   const LandPage({Key? key}) : super(key: key);
@@ -11,157 +14,96 @@ class LandPage extends StatefulWidget {
 }
 
 class _LandPageState extends State<LandPage> {
+  int _selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFEEFE3),
-      body: Row(
+      backgroundColor: const Color(0xFFFEEFE3),
+      body: SafeArea(
+          child: Row(
         children: [
-          SizedBox(height: 150),
-          SizedBox(width: 100),
-          Text("BET4L",
-              style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 40,
-                  fontFamily: 'GR')),
-          SizedBox(width: 1400),
-          TextButton(
-              onPressed: () {
-                showDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return Dialog(
-                      backgroundColor: Colors.black,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15.0),
-                      ),
-                      child: Container(
-                        height: 650,
-                        width: 580,
-                        child: Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Column(
-                            children: [
-                              SizedBox(height: 40),
-                              Text(
-                                "Sign In",
-                                style: TextStyle(
-                                    fontSize: 28,
-                                    fontWeight: FontWeight.bold,
-                                    color: Color(0xFFFEEFE3),
-                                    fontFamily: "GR"),
-                              ),
-                              SizedBox(height: 40),
-                              TBI(
-                                  text: "Sign In With Google",
-                                  icon: Icons.g_translate),
-                              SizedBox(height: 30),
-                              TBI(
-                                  text: "Sign In With Apple",
-                                  icon: Icons.apple),
-                              SizedBox(height: 30),
-                              TFF(Ltext: "Email", FF: "TR", icon: Icons.mail),
-                              SizedBox(height: 20),
-                              TFF(
-                                  Ltext: "Password",
-                                  FF: "TR",
-                                  icon: Icons.lock),
-                              SizedBox(height: 30),
-                              EVB(text: "Login"),
-                              SizedBox(height: 30),
-                              EVB(text: "Why You Forget Password??"),
-                              SizedBox(height: 50),
-                              Text(
-                                "You No Get Account?? Oya Go Back Then Sign Up Jon",
-                                style: TextStyle(
-                                    fontFamily: "TR", color: Color(0xFFFEEFE3)),
-                                textAlign: TextAlign.left,
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                    );
-                  },
-                );
-              },
-              child: Text("Sign In",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      fontFamily: 'GR'))),
-          SizedBox(width: 20),
-          TextButton(
-            onPressed: () {
-              showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return Dialog(
-                    backgroundColor: Colors.black,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15.0),
-                    ),
-                    child: Container(
-                      height: 650,
-                      width: 580,
-                      child: Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: Column(
-                          children: [
-                            SizedBox(height: 40),
-                            Text(
-                              "       The Only Way Is Bet                                                 ",
-                              style: TextStyle(
-                                  fontSize: 28,
-                                  fontWeight: FontWeight.bold,
-                                  color: Color(0xFFFEEFE3),
-                                  fontFamily: "GR"),
-                            ),
-                            Center(
-                              child: Text(
-                                "Join Us",
-                                style: TextStyle(
-                                    fontSize: 28,
-                                    fontWeight: FontWeight.bold,
-                                    color: Color(0xFFFEEFE3),
-                                    fontFamily: "GR"),
-                              ),
-                            ),
-                            // Text(
-                            //   "                 Join Us                                                 ",
-                            //   style: TextStyle(
-                            //       fontSize: 28,
-                            //       fontWeight: FontWeight.bold,
-                            //       color: Color(0xFFFEEFE3),
-                            //       fontFamily: "GR"),
-                            // ),
-                            SizedBox(height: 70),
-                            TBI(
-                                text: "Sign In With Google",
-                                icon: Icons.g_translate),
-                            SizedBox(height: 30),
-                            TBI(text: "Sign In With Apple", icon: Icons.apple),
-                            SizedBox(height: 120),
-                            EVB(text: "Create Account"),
-                          ],
-                        ),
-                      ),
-                    ),
-                  );
+          Expanded(
+              child: Container(
+            // margin: const EdgeInsets.fromLTRB(25, 23, 18, 23),
+            margin: const EdgeInsets.fromLTRB(50, 70, 18, 70),
+
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10), color: Colors.black),
+            child: Padding(
+              padding: const EdgeInsets.all(2.5),
+              child: NavigationRail(
+                backgroundColor: Colors.black,
+                selectedIndex: _selectedIndex,
+                onDestinationSelected: (int index) {
+                  setState(() {
+                    _selectedIndex = index;
+                  });
                 },
-              );
-            },
-            child: Text("Sign Up",
-                style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                    fontFamily: 'GR')),
+                labelType: NavigationRailLabelType.all,
+                destinations: const [
+                  NavigationRailDestination(
+                    icon: Icon(
+                      Icons.dashboard_customize_outlined,
+                      color: Color(0xFFFEEFE3),
+                    ),
+                    label: Text('Dashboard',
+                        style: TextStyle(color: Color(0xFFFEEFE3))),
+                  ),
+                  NavigationRailDestination(
+                    icon: Icon(Icons.notification_important,
+                        color: Color(0xFFFEEFE3)),
+                    label: Text(
+                      'Notification',
+                      style: TextStyle(color: Color(0xFFFEEFE3)),
+                    ),
+                  ),
+                  NavigationRailDestination(
+                    icon: Icon(Icons.task, color: Color(0xFFFEEFE3)),
+                    label: Text('Task',
+                        style: TextStyle(color: Color(0xFFFEEFE3))),
+                  ),
+                  NavigationRailDestination(
+                    icon: Icon(Icons.wechat_sharp, color: Color(0xFFFEEFE3)),
+                    label: Text('Chat',
+                        style: TextStyle(color: Color(0xFFFEEFE3))),
+                  ),
+                  NavigationRailDestination(
+                    icon:
+                        Icon(Icons.settings_suggest, color: Color(0xFFFEEFE3)),
+                    label: Text('Settings',
+                        style: TextStyle(color: Color(0xFFFEEFE3))),
+                  )
+                ],
+              ),
+            ), /*Column(
+                children: [
+                DrawerHeader(child: Text("T",style: TextStyle(color:Color(0xFFFEEFE3)),)),
+                ListTile(onTap: () {
+                },leading: Icon(Icons.dashboard_customize_outlined,color:Color(0xFFFEEFE3) ,),title: Text("Dashboard",style: TextStyle(color:Color(0xFFFEEFE3))),),
+                  ListTile(onTap: () {
+                  },leading: Icon(Icons.calendar_month_outlined,color:Color(0xFFFEEFE3)),title: Text("Schedule",style: TextStyle(color:Color(0xFFFEEFE3))),),
+                  ListTile(onTap: () {
+                  },leading: Icon(Icons.wechat_sharp,color:Color(0xFFFEEFE3)),title: Text("Chats",style: TextStyle(color:Color(0xFFFEEFE3))),),
+                  ListTile(onTap: () {
+                  },leading: Icon(Icons.notification_important,color:Color(0xFFFEEFE3)),title: Text("Notifications",style: TextStyle(color:Color(0xFFFEEFE3))),),
+                  ListTile(onTap: () {
+                  },leading: Icon(Icons.settings_suggest,color:Color(0xFFFEEFE3)),title: Text("Settings",style: TextStyle(color:Color(0xFFFEEFE3))),)
+              ],),*/
+          )),
+          Expanded(
+            flex: 5,
+            child: Container(
+              // margin: const EdgeInsets.fromLTRB(0, 23, 20, 23),
+
+              margin: const EdgeInsets.fromLTRB(0, 70, 50, 70),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10), color: Colors.black),
+              child: Column(children: const []),
+            ),
           )
         ],
-      ),
+      )),
     );
   }
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class TBI extends StatelessWidget {
-  String text;
-  IconData icon;
+ late String text;
+  late IconData icon;
 
   TBI({Key? key, required this.text, required this.icon}) : super(key: key);
 

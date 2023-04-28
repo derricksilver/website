@@ -1,34 +1,39 @@
 import 'package:flutter/material.dart';
 
 class TFF extends StatelessWidget {
-  String Ltext, FF;
-  IconData icon;
+  late String Ltext, FF;
+  late IconData icon;
+  var controller = TextEditingController();
 
-  TFF({Key? key, required this.Ltext, required this.FF, required this.icon})
+  TFF({Key? key, required this.Ltext, required this.FF, required this.icon, required this.controller})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.fromLTRB(120, 0, 120, 0),
-          child: TextFormField(
-              style: TextStyle(color: Color(0xFFFEEFE3)),
-              decoration: InputDecoration(
-                // contentPadding: EdgeInsets.all(5),
-                focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white)),
-                enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Color(0xFFFEEFE3))),
-                prefixIcon: Icon(
-                  icon,
-                  color: Color(0xFFFEEFE3),
-                ),
-                labelText: Ltext,
-                labelStyle: TextStyle(color: Color(0xFFFEEFE3), fontFamily: FF),
-              )),
-        ),
+        TextFormField(
+          controller: controller,
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return "massa enter the thing. Idiot!!!";
+              } else
+                null;
+            },
+            style: TextStyle(color: Color(0xFFFEEFE3)),
+            decoration: InputDecoration(
+              errorStyle: TextStyle(color: Color(0xFFFEEFE3)),
+              focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.white)),
+              enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Color(0xFFFEEFE3))),
+              prefixIcon: Icon(
+                icon,
+                color: Color(0xFFFEEFE3),
+              ),
+              labelText: Ltext,
+              labelStyle: TextStyle(color: Color(0xFFFEEFE3), fontFamily: FF),
+            )),
       ],
     );
   }
