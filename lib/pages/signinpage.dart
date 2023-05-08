@@ -12,13 +12,13 @@ class signinP extends StatefulWidget {
   State<signinP> createState() => _signinPState();
 }
 
-var personemail = TextEditingController();
+var personusername = TextEditingController();
 var personpassword = TextEditingController();
 final _formkey = GlobalKey<FormState>();
 
 @override
 void dispose() {
-  personemail.dispose();
+  personusername.dispose();
   personpassword.dispose();
 }
 
@@ -82,10 +82,10 @@ class _signinPState extends State<signinP> {
                 ),
                 SizedBox(height: 30),
                 TFF(
-                    Ltext: "Email",
+                    Ltext: "Username",
                     FF: "GR",
                     icon: Icons.mail,
-                    controller: personemail),
+                    controller: personusername),
                 SizedBox(height: 30.0),
                 TFF(
                     Ltext: "Password",
@@ -98,7 +98,7 @@ class _signinPState extends State<signinP> {
                   onPress: () {
                     if (_formkey.currentState!.validate()) {
                       PersonDetails personDetails = PersonDetails();
-                      personDetails.personemail = personemail.text;
+                      personDetails.personusername = personusername.text;
                       personDetails.personpassword = personpassword.text;
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:webpage/pages/homepage/HPBUTTONS.dart';
-import 'package:webpage/pages/homepage/hhmmm.dart';
 import 'package:webpage/pages/homepage/home.dart';
+import 'package:webpage/pages/homepage/jon.dart';
 import 'package:webpage/pages/landingpage.dart';
 import 'package:webpage/pages/signinpage.dart';
 import 'package:webpage/widgets/landingwidgets/textbutton.dart';
@@ -33,7 +33,7 @@ class _HousepageState extends State<Housepage> {
                         fontWeight: FontWeight.bold,
                         fontSize: 40,
                         fontFamily: 'GR')),
-                Text("Welcome " + personemail.text,
+                Text("Welcome " + personusername.text,
                     style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
@@ -58,7 +58,7 @@ class _HousepageState extends State<Housepage> {
                 text: "Zeus",
                 onPress: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return Home(text: "Zeus");
+                    return Zeus();
                   }));
                 },
               ),
