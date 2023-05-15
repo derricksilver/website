@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 class TFF extends StatelessWidget {
   late String Ltext, FF;
   late IconData icon;
-  var controller = TextEditingController();
+  TextEditingController? controller;
 
-  TFF({Key? key, required this.Ltext, required this.FF, required this.icon, required this.controller})
+  TFF({Key? key, required this.Ltext, required this.FF, required this.icon, this.controller})
       : super(key: key);
 
   @override

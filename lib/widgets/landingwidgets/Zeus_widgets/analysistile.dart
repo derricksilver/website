@@ -13,15 +13,15 @@ class _analysisState extends State<analysis> {
     return Column(
       children: [
         Expanded(
-          flex: 1,
+          flex: 2,
           child: Container(
-            margin: EdgeInsets.only(bottom: 20),
+            margin: EdgeInsets.only(bottom: 10),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: Colors.black,
             ),
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(30, 40, 850, 0),
+              padding: const EdgeInsets.fromLTRB(30, 60, 850, 0),
               child: TextFormField(
                 decoration: InputDecoration(
                   filled: true,
@@ -41,9 +41,9 @@ class _analysisState extends State<analysis> {
           ),
         ),
         Expanded(
-          flex: 3,
+          flex: 5,
           child: Container(
-            /*margin: EdgeInsets.only(bottom: 30),*/
+            margin: EdgeInsets.only(top: 10),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: Colors.black,
@@ -51,13 +51,28 @@ class _analysisState extends State<analysis> {
           ),
         ),
         Expanded(
-          flex: 2,
-          child: Container(
-            margin: EdgeInsets.only(top: 20),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: Colors.black,
-            ),
+          flex: 3,
+          child: Row(
+            children: [
+              Expanded(
+                child: Container(
+                  margin: EdgeInsets.only(top: 20, right: 10),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Container(
+                  margin: EdgeInsets.only(top: 20, left: 10),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.pink,
+                  ),
+                ),
+              )
+            ],
           ),
         )
       ],

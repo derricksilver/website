@@ -1,3 +1,3 @@
 class PersonDetails {
-  late String  personusername, personpassword;
+  late String personemail, persondigits, personusername, personpassword;
 }

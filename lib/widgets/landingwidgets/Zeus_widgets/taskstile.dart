@@ -13,15 +13,15 @@ class _tasksState extends State<tasks> {
     return Column(
       children: [
         Expanded(
-          flex: 1,
+          flex: 2,
           child: Container(
-            margin: EdgeInsets.only(bottom: 20),
+            margin: EdgeInsets.only(bottom: 10),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: Colors.black,
             ),
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(30, 40, 850, 0),
+              padding: const EdgeInsets.fromLTRB(30, 60, 850, 0),
               child: TextFormField(
                 decoration: InputDecoration(
                   filled: true,
@@ -41,8 +41,9 @@ class _tasksState extends State<tasks> {
           ),
         ),
         Expanded(
-          flex: 3,
+          flex: 5,
           child: Container(
+            margin: EdgeInsets.only(top: 10),
             child: Column(children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -126,19 +127,16 @@ class _tasksState extends State<tasks> {
                         style: TextStyle(color: Color(0xFFFEEFE3)),
                       ),
                       SizedBox(width: 40),
-
                       Text(
                         "Status",
                         style: TextStyle(color: Color(0xFFFEEFE3)),
                       ),
                       SizedBox(width: 100),
-
                       Text(
                         "Runtime",
                         style: TextStyle(color: Color(0xFFFEEFE3)),
                       ),
                       SizedBox(width: 40),
-
                       Text(
                         "Finish Date",
                         style: TextStyle(color: Color(0xFFFEEFE3)),
@@ -155,13 +153,28 @@ class _tasksState extends State<tasks> {
           ),
         ),
         Expanded(
-          flex: 2,
-          child: Container(
-            margin: EdgeInsets.only(top: 20),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: Colors.black,
-            ),
+          flex: 3,
+          child: Row(
+            children: [
+              Expanded(
+                child: Container(
+                  margin: EdgeInsets.only(top: 20, right: 10),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Container(
+                  margin: EdgeInsets.only(top: 20, left: 10),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.pink,
+                  ),
+                ),
+              )
+            ],
           ),
         )
       ],
