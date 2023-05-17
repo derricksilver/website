@@ -1,9 +1,11 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:webpage/pages/landingpage.dart';
+import 'package:webpage/firebase_options.dart';
 import 'package:webpage/pages/signinpage.dart';
-// import 'package:responsive_framework/responsive_framework.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const Fool());
 }
 
@@ -12,6 +14,6 @@ class Fool extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(  home: signinP());
+    return const MaterialApp(home: signinP());
   }
 }
