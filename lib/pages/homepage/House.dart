@@ -3,14 +3,13 @@ import 'package:webpage/pages/homepage/HPBUTTONS.dart';
 import 'package:webpage/pages/homepage/home.dart';
 import 'package:webpage/pages/homepage/jon.dart';
 import 'package:webpage/pages/landingpage.dart';
+import 'package:get/get.dart';
 import 'package:webpage/pages/signinpage.dart';
+import 'package:webpage/repository/authentication_repository/Authentication_Repository.dart';
 import 'package:webpage/widgets/landingwidgets/textbutton.dart';
 
-import '../../models/Person_model.dart';
-
 class Housepage extends StatefulWidget {
-  Housepage({Key? key, required this.personDetails}) : super(key: key);
-  PersonDetails personDetails;
+  Housepage({Key? key}) : super(key: key);
 
   @override
   State<Housepage> createState() => _HousepageState();
@@ -33,12 +32,23 @@ class _HousepageState extends State<Housepage> {
                         fontWeight: FontWeight.bold,
                         fontSize: 40,
                         fontFamily: 'GR')),
-                Text("Welcome " + personusername.text,
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        fontFamily: 'GR'))
+                Row(
+                  children: [
+                    Text("Welcome fiifi",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            fontFamily: 'GR')),
+                    SizedBox(width: 50),
+                    IconButton(
+                        onPressed: () {
+                          AuthRepo.instance.logout();
+                          // Get.to(signinP());
+                        },
+                        icon: Icon(Icons.directions_run))
+                  ],
+                )
               ],
             )),
         Container(
@@ -55,22 +65,19 @@ class _HousepageState extends State<Housepage> {
                 },
               ),*/
               TB(
-                text: "Zeus",
-                onPress: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return Zeus();
-                  }));
-                },
-              ),
+                  text: "Zeus",
+                  onPress: () {
+                    Get.to(Zeus(text: "QA",));
+                  }),
               TB(
                 text: "Loki",
                 onPress: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return HBP();
-                  }));
+                  Get.to(Zeus(
+                    text: "csc",
+                  ));
                 },
               ),
-            /*  TextButton.icon(
+              /*  TextButton.icon(
                   style: ButtonStyle(
                       backgroundColor:
                       MaterialStateProperty.all<Color>(Color(0xFFFEEFE3)),
@@ -117,9 +124,7 @@ class _HousepageState extends State<Housepage> {
               TB(
                 text: "Poseidon",
                 onPress: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return Home(text: "Poseidon");
-                  }));
+                  // Get.to(Zeus(text: "amandi",));
                 },
               ),
               /*TB(
@@ -134,18 +139,14 @@ class _HousepageState extends State<Housepage> {
               TB(
                 text: "Ares",
                 onPress: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return Home(text: "Ares");
-                  }));
+                  // Get.to(Zeus(text: "superlock",));
                 },
               ),
 
               TB(
                 text: "Thor",
                 onPress: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return LandPage();
-                  }));
+                  // Get.to(Zeus(text: "noc",));
                 },
               ),
               // SizedBox(width: 100),
@@ -153,9 +154,7 @@ class _HousepageState extends State<Housepage> {
               TB(
                 text: "Apollo",
                 onPress: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return Home(text: "Apollo");
-                  }));
+                  // Get.to(Zeus(text: "data centre",));
                 },
               ),
             ],
@@ -175,17 +174,13 @@ class _HousepageState extends State<Housepage> {
               TB(
                 text: "Chronos",
                 onPress: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return Home(text: "Chronos");
-                  }));
+                  // Get.to(Zeus(text: "applications",));
                 },
               ),
               TB(
                 text: "Athena",
                 onPress: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return Home(text: "Athena");
-                  }));
+                  // Get.to(Zeus(text: "cyberhawk",));
                 },
               ),
               /*    TB(

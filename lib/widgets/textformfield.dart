@@ -3,10 +3,20 @@ import 'package:flutter/material.dart';
 class TFF extends StatelessWidget {
   late String Ltext, FF;
   late IconData icon;
-  TextEditingController? controller;
+  late TextEditingController? controller;
+  late String? Function(String?)? validator;
+  late Widget? sufficon;
+  late bool? showme;
 
-
-  TFF({Key? key, required this.Ltext, required this.FF, required this.icon, this.controller})
+  TFF(
+      {Key? key,
+      required this.Ltext,
+      required this.FF,
+      required this.icon,
+      this.controller,
+      this.validator,
+      this.sufficon,
+      this.showme = false})
       : super(key: key);
 
   @override
@@ -14,13 +24,9 @@ class TFF extends StatelessWidget {
     return Column(
       children: [
         TextFormField(
-          controller: controller,
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return "massa enter the thing. Idiot!!!";
-              } else
-                null;
-            },
+            obscureText: showme!,
+            controller: controller,
+            validator: validator,
             style: TextStyle(color: Color(0xFFFEEFE3)),
             decoration: InputDecoration(
               errorStyle: TextStyle(color: Color(0xFFFEEFE3)),
@@ -33,6 +39,7 @@ class TFF extends StatelessWidget {
                 color: Color(0xFFFEEFE3),
               ),
               labelText: Ltext,
+              suffixIcon: sufficon,
               labelStyle: TextStyle(color: Color(0xFFFEEFE3), fontFamily: FF),
             )),
       ],

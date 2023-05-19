@@ -53,11 +53,11 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAU0OX_JYmBg95PB316yQ4GjX6Y_HElFtg',
-    appId: '1:567488334761:web:00be163be003ec382012b8',
-    messagingSenderId: '567488334761',
-    projectId: 'titan-742bf',
-    authDomain: 'titan-742bf.firebaseapp.com',
-    storageBucket: 'titan-742bf.appspot.com',
+    apiKey: 'AIzaSyBzUFqvLFcZZ80QF97d8DTBrpBpJRk39Go',
+    appId: '1:996843155855:web:504979b4e3308c88209bfa',
+    messagingSenderId: '996843155855',
+    projectId: 'titan-99cc7',
+    authDomain: 'titan-99cc7.firebaseapp.com',
+    storageBucket: 'titan-99cc7.appspot.com',
   );
 }

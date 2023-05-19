@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:webpage/pages/signinpage.dart';
 import 'package:webpage/widgets/landingwidgets/Zeus_widgets/analysistile.dart';
 import 'package:webpage/widgets/landingwidgets/Zeus_widgets/chatstile.dart';
 import 'package:webpage/widgets/landingwidgets/Zeus_widgets/dashboardtile.dart';
@@ -7,7 +6,9 @@ import 'package:webpage/widgets/landingwidgets/Zeus_widgets/notificationstile.da
 import 'package:webpage/widgets/landingwidgets/Zeus_widgets/taskstile.dart';
 
 class Zeus extends StatefulWidget {
-  const Zeus({Key? key}) : super(key: key);
+  final String text;
+
+  Zeus({Key? key, required this.text}) : super(key: key);
 
   @override
   State<Zeus> createState() => _ZeusState();
@@ -42,7 +43,7 @@ class _ZeusState extends State<Zeus> {
                         children: [
                           DrawerHeader(
                               child: Center(
-                            child: Text("Zeus",
+                            child: Text(widget.text,
                                 style: TextStyle(
                                     fontSize: 50,
                                     fontFamily: "GR",
@@ -58,7 +59,8 @@ class _ZeusState extends State<Zeus> {
                           SizedBox(
                             height: 30,
                           ),
-                          ListTile(contentPadding: EdgeInsets.only(left: 40,right: 0),
+                          ListTile(
+                            contentPadding: EdgeInsets.only(left: 40, right: 0),
                             leading: Icon((Icons.dashboard_customize_outlined),
                                 color: Color(0xFFFEEFE3)),
                             title: Text("Dashboard",
@@ -76,7 +78,9 @@ class _ZeusState extends State<Zeus> {
                           SizedBox(
                             height: 30,
                           ),
-                          ListTile(contentPadding: EdgeInsets.only(left: 40,right: 20),
+                          ListTile(
+                            contentPadding:
+                                EdgeInsets.only(left: 40, right: 20),
                             leading: Icon(Icons.task, color: Color(0xFFFEEFE3)),
                             title: Text("Tasks",
                                 style: TextStyle(
@@ -98,9 +102,11 @@ class _ZeusState extends State<Zeus> {
                           SizedBox(
                             height: 30,
                           ),
-                          ListTile(contentPadding: EdgeInsets.only(left: 40,right: 20),
-                            leading:
-                                Icon(Icons.wechat_sharp, color: Color(0xFFFEEFE3)),
+                          ListTile(
+                            contentPadding:
+                                EdgeInsets.only(left: 40, right: 20),
+                            leading: Icon(Icons.wechat_sharp,
+                                color: Color(0xFFFEEFE3)),
                             title: Text("Chats",
                                 style: TextStyle(
                                     fontFamily: "GR",
@@ -121,7 +127,9 @@ class _ZeusState extends State<Zeus> {
                           SizedBox(
                             height: 30,
                           ),
-                          ListTile(contentPadding: EdgeInsets.only(left: 40,right: 20),
+                          ListTile(
+                            contentPadding:
+                                EdgeInsets.only(left: 40, right: 20),
                             leading: Icon(Icons.notification_important,
                                 color: Color(0xFFFEEFE3)),
                             title: Text("Notifications",
@@ -144,7 +152,9 @@ class _ZeusState extends State<Zeus> {
                           SizedBox(
                             height: 30,
                           ),
-                          ListTile(contentPadding: EdgeInsets.only(left: 40,right: 20),
+                          ListTile(
+                            contentPadding:
+                                EdgeInsets.only(left: 40, right: 20),
                             leading:
                                 Icon(Icons.analytics, color: Color(0xFFFEEFE3)),
                             title: Text("Analytics",
@@ -169,7 +179,7 @@ class _ZeusState extends State<Zeus> {
                           SizedBox(
                             height: 30,
                           ),
-                          Text(personusername.text,
+                          Text("Fiifi",
                               style: TextStyle(
                                   fontFamily: "GR",
                                   fontWeight: FontWeight.bold,
@@ -177,7 +187,7 @@ class _ZeusState extends State<Zeus> {
                           SizedBox(
                             height: 10,
                           ),
-                          Text(personusername.text + "@stlghana.com",
+                          Text("fiifi@stlghana.com",
                               style: TextStyle(
                                   fontFamily: "GR",
                                   fontWeight: FontWeight.bold,
